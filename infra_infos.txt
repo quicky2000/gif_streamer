@@ -1,0 +1,7 @@
+depend: lib_gif
+MAIN_CFLAGS:-Wall -g -ansi -pedantic -std=c++11 -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -O3 -DNDEBUG
+###########:-Wall -g -ansi -pedantic -std=c++11 -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -O0
+CFLAGS:
+LDFLAGS:
+MAIN_LDFLAGS:
+env_variables:
