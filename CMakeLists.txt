@@ -16,6 +16,8 @@ set(MY_INCLUDE_DIRECTORIES
 #Create dependancy list
 set(DEPENDANCY_LIST "")
 LIST(APPEND DEPENDANCY_LIST "lib_gif")
+LIST(APPEND DEPENDANCY_LIST "lib_bmp")
+LIST(APPEND DEPENDANCY_LIST "parameter_manager")
 
 #------------------------------
 #- Generic part

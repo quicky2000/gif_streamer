@@ -1,4 +1,4 @@
-depend: lib_gif
+depend: lib_gif lib_bmp parameter_manager
 MAIN_CFLAGS:-Wall -g -ansi -pedantic -std=c++11 -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -O3 -DNDEBUG
 ###########:-Wall -g -ansi -pedantic -std=c++11 -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS -O0
 CFLAGS:

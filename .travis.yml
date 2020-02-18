@@ -19,6 +19,8 @@ before_install:
   - cd $MY_LOCATION/repositories
   - git clone https://github.com/quicky2000/quicky_tools.git
   - git clone https://github.com/quicky2000/lib_gif.git
+  - git clone https://github.com/quicky2000/lib_bmp.git
+  - git clone https://github.com/quicky2000/parameter_manager.git
   - git clone https://github.com/quicky2000/quicky_exception.git
   - git clone https://github.com/quicky2000/quicky_utils.git
   - cd quicky_tools/setup
