@@ -46,7 +46,9 @@ namespace gif_streamer
         ~gif_streamer();
 
         inline
-        void send_bmp(std::string p_file_name, unsigned int p_delay_ms = 0);
+        void send_bmp( const std::string & p_file_name
+                     , unsigned int p_delay_ms = 0
+                     );
 
         inline
         void send_trailer();
@@ -107,7 +109,9 @@ namespace gif_streamer
 
     //-------------------------------------------------------------------------
     void
-    gif_streamer::send_bmp(std::string p_file_name, unsigned int p_delay_ms)
+    gif_streamer::send_bmp( const std::string & p_file_name
+                          , unsigned int p_delay_ms
+                          )
     {
         // Check if file exist
         std::ifstream l_file;
