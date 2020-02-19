@@ -174,7 +174,7 @@ namespace gif_streamer
         if(m_first_picture || l_need_local_palette)
         {
             unsigned int l_index = 0;
-            for(auto l_color_iter : l_palette)
+            for(auto & l_color_iter : l_palette)
             {
                 l_conversion_colors.insert(std::map<lib_bmp::my_color_alpha,unsigned int>::value_type(l_color_iter,l_index));
                 ++l_index;
@@ -186,7 +186,7 @@ namespace gif_streamer
         {
             // Fill local palette
             unsigned int l_index = 0;
-            for(auto l_color_iter : l_palette)
+            for(auto & l_color_iter : l_palette)
             {
                 lib_gif::gif_color l_gif_color(l_color_iter.get_red(),l_color_iter.get_green(),l_color_iter.get_blue());
                 l_picture.set_color_in_color_table(l_index, l_gif_color);
@@ -197,7 +197,7 @@ namespace gif_streamer
         {
             // Fill global palette
             unsigned int l_index = 0;
-            for(auto l_color_iter : l_palette)
+            for(auto & l_color_iter : l_palette)
             {
                 lib_gif::gif_color l_gif_color(l_color_iter.get_red(),l_color_iter.get_green(),l_color_iter.get_blue());
                 m_logical_screen.set_color_in_global_color_table(l_index, l_gif_color);
