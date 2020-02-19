@@ -23,6 +23,7 @@
 #include "gif_trailer.h"
 #include "gif_image.h"
 #include "gif_graphic_control_extension.h"
+#include "gif_comment_extension.h"
 #include "my_bmp.h"
 #include "my_color_alpha.h"
 #include <ostream>
@@ -49,6 +50,9 @@ namespace gif_streamer
         void send_bmp( const std::string & p_file_name
                      , unsigned int p_delay_ms = 0
                      );
+
+        inline
+        void send_comment(const std::string & p_comment);
 
         inline
         void send_trailer();
@@ -250,6 +254,14 @@ namespace gif_streamer
         l_color_stream << p_bmp_color;
         throw quicky_exception::quicky_logic_exception("BMP color \"" + l_color_stream.str() + " not found insigned GIF palette",__LINE__,__FILE__);
 
+    }
+
+    //-------------------------------------------------------------------------
+    void
+    gif_streamer::send_comment(const std::string & p_comment)
+    {
+        lib_gif::gif_comment_extension l_ext(p_comment);
+        l_ext.write(m_stream);
     }
 
 }
