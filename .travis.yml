@@ -27,11 +27,12 @@ before_install:
   - . setup.sh
   - cd $MY_LOCATION
   - chmod a+x repositories/quicky_tools/bin/*
-  - mkdir build
-  - cd build
 
 script:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then generate_makefile gif_streamer ; make ; mkdir cmake_build ; cd cmake_build ; fi
-  - cmake $QUICKY_REPOSITORY/gif_streamer
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then mkdir build; cd build; generate_makefile gif_streamer ; make test; fi
+  - cd $MY_LOCATION ; mkdir cmake_build ; cd cmake_build ; cmake $QUICKY_REPOSITORY/gif_streamer
   - make
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd $MY_LOCATION/build ; ./bin/gif_streamer.exe  --delay-ms=500 --nb-files=14 "$QUICKY_REPOSITORY/gif_streamer/test/example_#.bmp" && diff stream.gif $QUICKY_REPOSITORY/gif_streamer/test/ref.gif ; fi
+  - cd $MY_LOCATION/cmake_build
+  - ./gif_streamer  --delay-ms=500 --nb-files=14 "$QUICKY_REPOSITORY/gif_streamer/test/example_#.bmp" && diff stream.gif $QUICKY_REPOSITORY/gif_streamer/test/ref.gif
 #EOF
